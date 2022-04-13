@@ -6,7 +6,6 @@ import SearchIcon from "./search.svg";
 import env from "react-dotenv";
 
 const App = () => {
-
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState([]);
 
@@ -20,7 +19,7 @@ const App = () => {
 
   useEffect(() => {
     searchMovies("Harry Potter");
-  },[]);
+  }, []);
 
   return (
     <div className="app">
@@ -30,9 +29,15 @@ const App = () => {
           type="text"
           placeholder="Search for movies..."
           value={searchTerm}
-          onChange={(e) => {setSearchTerm(e.target.value)}}
+          onChange={(e) => {
+            setSearchTerm(e.target.value);
+          }}
         />
-        <img src={SearchIcon} alt="Search" onClick={() => searchMovies(searchTerm)} />
+        <img
+          src={SearchIcon}
+          alt="Search"
+          onClick={() => searchMovies(searchTerm)}
+        />
       </div>
 
       {movies?.length > 0 ? (
@@ -46,9 +51,11 @@ const App = () => {
           <h2>No Movies Found!</h2>
         </div>
       )}
+      <div class="footer">
+        <p>© Copyright 2020 <a className="link" href="https://abusalehfaysal.github.io/">Abu Saleh Faysal</a></p>
+      </div>
     </div>
   );
-
 };
 
 export default App;
