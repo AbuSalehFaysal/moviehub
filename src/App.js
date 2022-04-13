@@ -9,7 +9,7 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState([]);
 
-  const API_URL = `http://www.omdbapi.com?apikey=${env.API_KEY}`;
+  const API_URL = `https://www.omdbapi.com?apikey=${env.API_KEY}`;
 
   const searchMovies = async (title) => {
     const response = await fetch(`${API_URL}&s=${title}`);
@@ -52,7 +52,7 @@ const App = () => {
         </div>
       )}
       <div class="footer">
-        <p>© Copyright 2020 <a className="link" href="https://abusalehfaysal.github.io/">Abu Saleh Faysal</a></p>
+        <p>© Copyright 2020 <a className="link" href="https://abusalehfaysal.github.io/" target="_blank" rel="noreferrer">Abu Saleh Faysal</a></p>
       </div>
     </div>
   );
